@@ -4,16 +4,20 @@ const Letter = function Letter(character) {
 };
 
 Letter.prototype.showCharacter = function () {
-    if (this.guessed) {
-        return this.character;
+    if (this.character === " ") {
+        return "  ";
+    } else if (this.guessed) {
+        return `${this.character} `;
     }
-    return "_";
+    return "_ ";
 };
 
 Letter.prototype.checkGuess = function (guessedCharacter) {
-    if (guessedCharacter === this.character) {
+    if (guessedCharacter.toLowerCase() === this.character.toLowerCase()) {
         this.guessed = true;
+        return true;
     }
+    return false;
 };
 
 module.exports = Letter;

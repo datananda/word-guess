@@ -18,7 +18,6 @@ Word.prototype.checkGuess = function (guessedCharacter) {
     this.letterArray.forEach((letter) => {
         if (letter.checkGuess(guessedCharacter)) {
             this.lettersRemaining--;
-            console.log(this.lettersRemaining);
             result = true;
         }
     });
